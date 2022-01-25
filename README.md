@@ -1,2 +1,11 @@
 # CryptoWhales
-Kryptovermögenswerte tracken mit Anzeige aller passiven Zuflüsse + Automatisches Verschicken einer Telegramnachricht beim Überschreiten festgelegter Grenzen
+
+##Get Started:
+
+###Install Deno:
+'''
+brew install deno
+'''
+
+### Set up the Svelte Deno environment:
+https://github.com/denofn/svelte.git
