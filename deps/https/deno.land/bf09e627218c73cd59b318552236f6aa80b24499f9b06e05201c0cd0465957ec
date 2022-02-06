@@ -1,0 +1,46 @@
+import { underline, yellow } from "./deps.ts";
+
+import { isQuoted, issueCounter } from "./helper.ts";
+
+export interface ParseOptions {
+  debug?: boolean;
+}
+
+export function parse(raw: string, options?: ParseOptions) {
+  const issueNo = issueCounter();
+  const debug = options?.debug;
+
+  const env: Record<string, string> = {};
+
+  const lines = raw.split("\n").entries();
+  for (const [idx, line] of lines) {
+    const lineNo = idx + 1;
+    const issues = [];
+
+    if (!line) {
+      issues.push(`${yellow("[!]")} ${issueNo()} the line ${lineNo} is empty `);
+    }
+
+    const markedLine = underline(line);
+    const record = line.match(/^\s*([\w.-]+)\s*=\s*(.*)?\s*$/);
+
+    if (!record) {
+      issues.push(
+        `${
+          yellow("[!]")
+        } ${issueNo()} did not match key and value when parsing line ${lineNo}:${markedLine}`,
+      );
+    }
+
+    if (issues.length) {
+      if (debug) issues.forEach((issue) => console.log(issue));
+      continue;
+    }
+
+    const [_, key, value] = record as string[];
+
+    env[key] = isQuoted(value) ? value.slice(1, -1) : value;
+  }
+
+  return env;
+}

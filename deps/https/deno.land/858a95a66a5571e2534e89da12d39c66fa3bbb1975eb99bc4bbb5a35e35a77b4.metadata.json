@@ -1,0 +1,20 @@
+{
+  "headers": {
+    "last-modified": "Wed, 26 Jan 2022 09:41:20 GMT",
+    "x-amz-id-2": "3nrOcAQ6aQ3eHwNIGt+alTLQS+VYXnezeFolAteejO5j5GvOWGLOyWGc4aa6g+tyaNyBnUORMmg=",
+    "access-control-allow-origin": "*",
+    "content-type": "application/typescript; charset=utf-8",
+    "server": "deploy/europe-west3-c",
+    "date": "Sun, 06 Feb 2022 17:42:52 GMT",
+    "etag": "\"7844d48946181a0e6e5483037542b016\"",
+    "x-amz-version-id": "D3wH5ozxwJwVtVPj_oReyJ.GH.JEnlwi",
+    "cache-control": "public, max-age=31536000, immutable",
+    "x-amz-request-id": "WE3MM6WY2P44BXY3",
+    "content-length": "6779"
+  },
+  "url": "https://deno.land/x/telegram_chatbot@v1.0.0/src/telegram-bot/telegram-bot.ts",
+  "now": {
+    "secs_since_epoch": 1644169371,
+    "nanos_since_epoch": 406697000
+  }
+}

@@ -1,0 +1,64 @@
+import { resolve, yellow } from "./deps.ts";
+
+import { parse, ParseOptions } from "./parse.ts";
+import { issueCounter } from "./helper.ts";
+
+interface ConfigOptions extends ParseOptions {
+  path?: string;
+  encoding?: "utf-8";
+  override?: boolean;
+}
+
+interface ConfigResult {
+  parsed?: Record<string, string>;
+  error?: Error;
+}
+
+export function config(
+  options?: ConfigOptions,
+): ConfigResult {
+  let result: ConfigResult;
+  const cwd = Deno.cwd();
+  const home = Deno.env.get("HOME");
+  const env = Deno.env.toObject();
+
+  const issues = [];
+  const issueNo = issueCounter();
+
+  let target = options?.path ?? resolve(cwd, ".env");
+  const encoding = options?.encoding ?? "utf-8";
+  const debug = options?.debug ?? false;
+  const override = options?.override ?? false;
+
+  if (target.charAt(0) === "~") {
+    target = resolve(<string> home, target.slice(1));
+  }
+
+  try {
+    const raw = new TextDecoder(encoding).decode(Deno.readFileSync(target));
+    const parsed = parse(raw, { debug });
+
+    for (const key in parsed) {
+      const value = parsed[key];
+      if (env[key] && !override) {
+        issues.push(
+          `${
+            yellow("[!]")
+          } ${issueNo()}  is already defined in \`Deno.env\` and will not be overwritten`,
+        );
+      } else {
+        Deno.env.set(key, value);
+      }
+    }
+
+    if (debug) issues.forEach((issue) => console.log(issue));
+
+    result = { parsed };
+  } catch (error) {
+    result = {
+      error,
+    };
+  }
+
+  return result;
+}

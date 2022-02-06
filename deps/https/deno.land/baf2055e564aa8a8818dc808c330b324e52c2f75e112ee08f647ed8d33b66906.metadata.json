@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "access-control-allow-origin": "*",
+    "date": "Sun, 06 Feb 2022 17:42:51 GMT",
+    "x-deno-warning": "Implicitly using latest version (v1.0.0) for https://deno.land/x/telegram_chatbot/mod.ts",
+    "location": "/x/telegram_chatbot@v1.0.0/mod.ts",
+    "content-length": "0",
+    "server": "deploy/europe-west3-c"
+  },
+  "url": "https://deno.land/x/telegram_chatbot/mod.ts",
+  "now": {
+    "secs_since_epoch": 1644169371,
+    "nanos_since_epoch": 26285000
+  }
+}

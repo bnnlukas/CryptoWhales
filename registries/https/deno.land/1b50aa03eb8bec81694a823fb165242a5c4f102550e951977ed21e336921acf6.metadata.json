@@ -1,0 +1,14 @@
+{
+  "headers": {
+    "content-length": "189",
+    "content-type": "application/json",
+    "date": "Sun, 06 Feb 2022 17:42:48 GMT",
+    "server": "deploy/europe-west3-c",
+    "cache-control": "max-age=2628000, immutable"
+  },
+  "url": "https://deno.land/_api/details/x/telegram_chatbot/_latest/mod.ts",
+  "now": {
+    "secs_since_epoch": 1644169368,
+    "nanos_since_epoch": 592762000
+  }
+}

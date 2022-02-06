@@ -1,0 +1,10 @@
+import { gray, italic } from "./deps.ts";
+
+export function issueCounter() {
+  let issueIdx = 0;
+  return () => gray(`[${italic(`#${++issueIdx}`)}]`);
+}
+
+export function isQuoted(str: string) {
+  return /^'\w*'$/.test(str) || /^"\w*"$/.test(str);
+}
