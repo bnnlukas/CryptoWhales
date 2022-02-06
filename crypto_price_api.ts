@@ -1,25 +1,26 @@
-let fiat_currency
-let crypto_currency
+let fiatCurrency: string;
+let cryptoCurrency: string;
+let currencyPair:string;
 
-export class Crypto_Price_Api {
+export class CryptoPriceApi {
 
-    async getSpotPrice(crypto_currency:String, fiat_currency:String) {
-        let data = await fetch(`https://api.coinbase.com/v2/prices/${crypto_currency}-${fiat_currency}/spot`);
+    async getSpotPrice(cryptoCurrency:String, fiatCurrency:String) {
+        let data = await fetch(`https://api.coinbase.com/v2/prices/${cryptoCurrency}-${fiatCurrency}/spot`);
         let json = await data.json();
         return json.data;
     }
-    async getBuyPrice(crypto_currency:String, fiat_currency:String) {
-        let data = await fetch(`https://api.coinbase.com/v2/prices/${crypto_currency}-${fiat_currency}/buy`);
+    async getBuyPrice(cryptoCurrency:String, fiatCurrency:String) {
+        let data = await fetch(`https://api.coinbase.com/v2/prices/${cryptoCurrency}-${fiatCurrency}/buy`);
         let json = await data.json();
         return json.data;
     }
-    async getSellPrice(crypto_currency:String, fiat_currency:String) {
-        let data = await fetch(`https://api.coinbase.com/v2/prices/${crypto_currency}-${fiat_currency}/sell`);
+    async getSellPrice(cryptoCurrency:String, fiatCurrency:String) {
+        let data = await fetch(`https://api.coinbase.com/v2/prices/${cryptoCurrency}-${fiatCurrency}/sell`);
         let json = await data.json();
         return json.data;
     }
-    async getSpotPrice_Telegram(currency_pair:String) {
-        let data = await fetch(`https://api.coinbase.com/v2/prices/${crypto_currency}-${fiat_currency}/spot`);
+    async getSpotPriceTelegram(currencyPair:String) {
+        let data = await fetch(`https://api.coinbase.com/v2/prices/${cryptoCurrency}-${fiatCurrency}/spot`);
         let json = await data.json();
         return json.data;
     }
