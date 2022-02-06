@@ -2,7 +2,7 @@
 
  ## Creating a deno module
 
- Started by creating a modul which shows the current prize of each currency listed on Coinbase.
+ Started by creating a modul which shows the current price of each currency listed on Coinbase.
 
  https://github.com/bnnlukas/crypto_price_api
 
@@ -18,7 +18,7 @@
  
  Start the Bot by typing in /start. Then you can type in the cryptocurrency in the following form:
  
- > cryptocurrency-fiatcurrency // e.g. BTC-USD
+ cryptocurrency-fiatcurrency // e.g. BTC-USD
  
  The output is the current spot price of the cryptocurrency.
 
