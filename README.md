@@ -2,9 +2,11 @@
 
  ## Creating a deno module
 
- Started by creating a modul which shows the current price of each currency listed on Coinbase.
+ Started by creating a module which shows the current price of each currency listed on Coinbase.
 
  https://github.com/bnnlukas/crypto_price_api
+ 
+ Showing not only the spotprice for the cryptocurrencies, but also the buy- and sellprice.
 
  ## Telegram Bot
 
@@ -18,7 +20,7 @@
  
  Start the Bot by typing in /start. Then you can type in the cryptocurrency in the following form:
  
- cryptocurrency-fiatcurrency // e.g. BTC-USD
+ cryptocurrency you want to know the price of-fiatcurrency you want to get the price in // e.g. BTC-USD
  
  The output is the current spot price of the cryptocurrency.
  
@@ -38,4 +40,5 @@ try{
  }
  ```
 
+If the user types in any pair not, which is not listet on Coinbase, he gets a notification with a link to the Coinbasewebsite.
 
