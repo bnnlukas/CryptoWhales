@@ -40,5 +40,5 @@ try{
  }
  ```
 
-If the user types in any pair not, which is not listet on Coinbase, he gets a notification with a link to the Coinbasewebsite.
+If the user types in any pair which is not listet on Coinbase, he gets a notification with a link to the Coinbasewebsite.
 
