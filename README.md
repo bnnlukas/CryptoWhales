@@ -22,6 +22,8 @@
  
  The output is the current spot price of the cryptocurrency.
  
+ ### Error Handling
+ 
  To deal with wrong inputs of the user, we did a try and catch istruction:
  
  
