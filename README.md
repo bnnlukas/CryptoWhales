@@ -21,5 +21,19 @@
  cryptocurrency-fiatcurrency // e.g. BTC-USD
  
  The output is the current spot price of the cryptocurrency.
+ 
+ To deal with wrong inputs of the user, we did a try and catch istruction:
+ 
+ 
+ ```ruby
+try{
+     output = await test.getSpotPriceTelegram(text)
+     await bot.sendMessage({ chat_id: message.message.chat.id, text: `Der ${crypto} Preis liegt bei ${output} ${fiat}` })
+ }
+ catch(error){
+     await bot.sendMessage({ chat_id: message.message.chat.id, text: `Dieses Paar ist bei Coinbase nicht gelistet. Geben Sie ein gültiges Paar ein. Alle gültigen Paare finden Sie auf der folgenden Website: https://www.coinbase.com/de/price` })
+
+ }
+ ```
 
 
