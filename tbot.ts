@@ -6,7 +6,7 @@ let output;
 let fiat;
 let crypto;
 
-const TOKEN = '5174997578:AAEWhS1Kc7RkKAlevKkNpEJzsTEbu7S9eZk';
+const TOKEN = Deno.env.get('TOKEN');
 if (!TOKEN) throw new Error("Bot token is not provided");
 const bot = new TelegramBot(TOKEN);
 
